@@ -11,6 +11,9 @@ builder
 });
 
 builder.Services.AddDbContext<BlogDataContext>();
+builder.Services.AddTransient();
+builder.Services.AddScoped();
+builder.Services.AddSingleton();
 
 var app = builder.Build();
 
