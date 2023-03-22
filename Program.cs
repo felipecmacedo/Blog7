@@ -1,4 +1,5 @@
 using Blog.Data;
+using Blog7.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +12,7 @@ builder
 });
 
 builder.Services.AddDbContext<BlogDataContext>();
-builder.Services.AddTransient();
-builder.Services.AddScoped();
-builder.Services.AddSingleton();
+builder.Services.AddTransient<TokenService>();
 
 var app = builder.Build();
 
